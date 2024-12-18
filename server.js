@@ -30,8 +30,19 @@ app.get("/", (req, res) => {
 // Use room routes with prefix '/api'
 // app.use('/api', restaurantRoutes);
 
+// SERVE STATIC FILES
+app.use(express.static(path.join(__dirname, "./frontend/build")));
+app.get("*", function (_, res) {
+    res.sendFile(
+        path.join(__dirname, "./frontend/build/index.html"),
+        function (err) {
+            res.status(500).send(err);
+        }
+    );
+});
+
 // Start the server
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 });
