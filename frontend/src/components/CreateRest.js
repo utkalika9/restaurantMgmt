@@ -26,7 +26,7 @@ const CreateRest = (props) => {
     e.preventDefault();
 
     axios
-      .post('https://5000-poojag7277-restaurantmg-1115xqmkyhv.ws-us117.gitpod.io/api/restaurant', description)
+      .post('https://5000-utkalika9-restaurantmgm-tz19hdj2teq.ws-us117.gitpod.io/api/restaurant', description)
 //      .post('/api/restaurant', description)
       .then((res) => {
         setDescription({
