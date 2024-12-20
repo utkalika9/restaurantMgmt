@@ -23,7 +23,7 @@ app.use(cors({
   app.use("/api/restaurant",restaurant)
 
 // Basic route for home page
-app.get("/", (req, res) => {
+app.get("/home", (req, res) => {
     res.send("Hello Welcome to Our Restaurant Home Page!");
 });
 
