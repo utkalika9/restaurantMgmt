@@ -20,7 +20,7 @@ app.use(cors({
     methods: ["GET", "POST", "PUT", "DELETE"], // Allowed methods
     credentials: true
   }));  // Allow all origins for development
-  app.use("/api/restaurant",restaurant)
+  app.use("/api",restaurant)
 
 // Basic route for home page
 app.get("/home", (req, res) => {

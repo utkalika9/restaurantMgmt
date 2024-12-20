@@ -15,7 +15,7 @@ const HomePage = () => {
       <Box mt={4}>
         <Button 
           component={Link} 
-          to="/show-restaurant" // Updated to link to the ShowBookList component
+          to="/create-rest" // Updated to link to the ShowitemList component
           color="primary" 
           variant="contained"
         >
