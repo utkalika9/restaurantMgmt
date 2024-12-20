@@ -21,6 +21,13 @@ const HomePage = () => {
         >
           View Items
         </Button>
+        <Button 
+          component={Link} to="/export" 
+          color="primary" 
+          variant="contained" 
+        >
+          Download Restaurants-list
+        </Button>
       </Box>
     </Container>
   );
