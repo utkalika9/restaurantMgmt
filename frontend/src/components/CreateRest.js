@@ -26,9 +26,10 @@ const CreateRest = (props) => {
     e.preventDefault();
 
     axios
-      .post('https://5000-utkalika9-restaurantmgm-tz19hdj2teq.ws-us117.gitpod.io/api/restaurant', description)
-//      .post('/api/restaurant', description)
+      .post('https://restaurantmgmt-qrcz.onrender.com/api/restaurant', description)
+        
       .then((res) => {
+        console.log(res)
         setDescription({
           name: '',
           phonenumber:'' ,

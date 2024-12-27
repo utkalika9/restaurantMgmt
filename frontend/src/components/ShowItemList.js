@@ -86,6 +86,7 @@ function ShowItemList() {
       .get("https://restaurantmgmt-qrcz.onrender.com/api/restaurant" )
       .then((res) => {
         if (Array.isArray(res.data)) {
+          console.log(res)
           setItems(res.data); // Ensure data is an array
         } else {
           console.error('Unexpected data format:', res.data);

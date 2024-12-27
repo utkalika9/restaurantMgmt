@@ -34,8 +34,9 @@ const ShowItemDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`/api/restaurant/${id}`)
+      .get(`https://restaurantmgmt-qrcz.onrender.com/api/restaurant/${id}`)
       .then((res) => {
+        console.log(res)
         setItem(res.data);
       })
       .catch((err) => {
@@ -49,7 +50,7 @@ const ShowItemDetails = () => {
 
   const handleDeleteConfirm = () => {
     axios
-      .delete(`/api/restaurant/${id}`)
+      .delete(`https://restaurantmgmt-qrcz.onrender.com/api/restaurant/${id}`)
       .then((res) => {
         navigate('/show-restaurant');
       })

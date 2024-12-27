@@ -15,8 +15,9 @@ const ExportPage = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('https://5000-utkalika9-restaurantmgm-tz19hdj2teq.ws-us117.gitpod.io/api/restaurants')
+        axios.get('https://restaurantmgmt-qrcz.onrender.com/api/restaurants')
           .then(res => {
+            console.log(res)
             setRestaurants(res.data);
             setLoading(false);
           })
