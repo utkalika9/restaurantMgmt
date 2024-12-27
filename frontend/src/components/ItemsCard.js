@@ -66,18 +66,6 @@ import { Card, CardContent, Typography, Button, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 const ItemsCard = ({ restaurant }) => {
-  // Add a check to ensure the restaurant object and its properties exist
-  if (!restaurant || !restaurant._id) {
-    return (
-      <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', boxShadow: 3, borderRadius: 2 }}>
-        <CardContent>
-          <Typography variant="body1" color="text.secondary">
-            Invalid restaurant data.
-          </Typography>
-        </CardContent>
-      </Card>
-    );
-  }
 
   return (
     <Card
