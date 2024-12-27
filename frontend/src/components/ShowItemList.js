@@ -138,6 +138,7 @@ function ShowItemList() {
           ) : (
             items.map((restaurant, index) => (
               <Grid item xs={12} sm={6} md={4} key={index}>
+                {console.log(restaurant)}
                 <ItemsCard restaurant={restaurant} />
               </Grid>
             ))
