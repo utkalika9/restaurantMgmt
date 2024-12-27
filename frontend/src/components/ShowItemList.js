@@ -83,7 +83,7 @@ function ShowItemList() {
 
   useEffect(() => {
     axios
-      .get("https://restaurantmgmt.onrender.com/api/restaurant" )
+      .get("https://restaurantmgmt-qrcz.onrender.com/api/restaurant" )
       .then((res) => {
         if (Array.isArray(res.data)) {
           setItems(res.data); // Ensure data is an array
