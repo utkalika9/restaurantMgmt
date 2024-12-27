@@ -136,9 +136,9 @@ function ShowItemList() {
               </Typography>
             </Grid>
           ) : (
-            items.map((item, index) => (
+            items.map((restaurant, index) => (
               <Grid item xs={12} sm={6} md={4} key={index}>
-                <ItemsCard item={item} />
+                <ItemsCard restaurant={restaurant} />
               </Grid>
             ))
           )}
