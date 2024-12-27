@@ -21,7 +21,7 @@ app.use(function (request, response, next) {
   });
 app.use(
   cors({
-    origin: 'https://restaurantmgmt-qrcz.onrender.com', // Frontend origin
+    origin: ['https://restaurantmgmt-qrcz.onrender.com','https://5000-utkalika9-restaurantmgm-tz19hdj2teq.ws-us117.gitpod.io'], // Frontend origin
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
     credentials: true, // Include credentials if needed
   })
