@@ -28,13 +28,6 @@ const HomePage = () => {
         >
           Download Restaurantslist
         </Button>
-        <Button 
-          component={Link} to="/update" 
-          color="primary" 
-          variant="contained" 
-        >
-          Update Item
-        </Button>
       </Box>
     </Container>
   );
