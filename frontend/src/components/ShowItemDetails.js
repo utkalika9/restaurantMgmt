@@ -34,7 +34,7 @@ const ShowItemDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`https://restaurantmgmt-qrcz.onrender.com/api/restaurant/${id}`)
+      .get(`/api/restaurant/${id}`)
       .then((res) => {
         console.log(res)
         setItem(res.data);
@@ -50,7 +50,7 @@ const ShowItemDetails = () => {
 
   const handleDeleteConfirm = () => {
     axios
-      .delete(`https://restaurantmgmt-qrcz.onrender.com/api/restaurant/${id}`)
+      .delete(`/api/restaurant/${id}`)
       .then((res) => {
         navigate('/show-restaurant');
       })
@@ -73,7 +73,7 @@ const ShowItemDetails = () => {
               <CardMedia
                 component="img"
                 height="300"
-                image="https://images.unsplash.com/photo-1495446815901-a7297e633e8d"
+                image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuRA9x6oQz7KrAjSLtkYd9kJjPok4iDTPvig&s"
                 alt={item.title}
               />
             </Card>
