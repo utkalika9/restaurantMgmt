@@ -113,7 +113,7 @@ const ShowItemDetails = () => {
             <Button
               startIcon={<EditIcon />}
               component={RouterLink}
-              to={`/edit-list/${item._id}`}
+              to={`/edit/${item._id}`}
               variant="contained"
               color="primary"
               sx={{ mr: 1 }}

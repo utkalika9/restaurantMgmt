@@ -93,7 +93,7 @@ function Update(props) {
               <input
                 type='number'
                 placeholder='phonenumber'
-                name='isbn'
+                name='phonenumber'
                 className='form-control'
                 value={item.phonenumber}
                 onChange={onChange}
@@ -128,7 +128,10 @@ function Update(props) {
             <br />
 
             <button
-              type='submit'
+              type="submit"
+              variant="contained"
+              color="primary"
+              fullWidth
               className='btn btn-outline-info btn-lg btn-block'
             >
               Update 

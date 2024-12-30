@@ -38,7 +38,7 @@ function ShowItemList() {
 
       <Button
         component={Link}
-        to="/show-restaurant"
+        to="/create-rest"
         color="primary"
         variant="contained"
         sx={{ mb: 4 }}
