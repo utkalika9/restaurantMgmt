@@ -15,7 +15,7 @@ function Update(props) {
 
   useEffect(() => {
     axios
-      .get(`https://restaurantmgmt.onrender.com/api/restaurant/${id}`)
+      .get(`https://restaurantmgmt-qrcz.onrender.com/api/restaurant/${id}`)
       .then((res) => {
         setItem({
             name: res.data.name,

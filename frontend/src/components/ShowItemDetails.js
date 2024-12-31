@@ -72,7 +72,7 @@ const ShowItemDetails = () => {
               <CardMedia
                 component="img"
                 height="300"
-                image="https://images.unsplash.com/photo-1495446815901-a7297e633e8d"
+                image="https://s.hdnux.com/photos/01/41/73/77/25673711/3/rawImage.jpg"
                 alt={item.title}
               />
             </Card>
