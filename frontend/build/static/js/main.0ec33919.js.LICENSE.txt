@@ -257,6 +257,12 @@
  */
 
 /**
+ * @license qrcode.react
+ * Copyright (c) Paul O'Shannessy
+ * SPDX-License-Identifier: ISC
+ */
+
+/**
  * @mui/styled-engine v6.2.0
  *
  * @license MIT

@@ -21,6 +21,14 @@ const HomePage = () => {
         >
           View Items
         </Button>
+        <Button 
+          component={Link} 
+          to="/create-rest" // Updated to link to the ShowitemList component
+          color="primary" 
+          variant="contained"
+        >
+          QRCode
+        </Button>
       </Box>
     </Container>
   );

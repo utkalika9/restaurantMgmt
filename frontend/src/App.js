@@ -13,8 +13,9 @@ import HomePage from './components/HomePage';
 import CreateRest from './components/CreateRest';
 import ShowItemList from './components/ShowItemList';
 import ShowItemDetails from './components/ShowItemDetails';
-import Export from './components/Export'
+import Export from './components/Export';
 import Update from './components/Update';
+import QRCode from './components/QRCode';
 
 
 
@@ -34,6 +35,7 @@ const App = () => {
         <Route path='/show-restaurant/:id' element={<ShowItemDetails />} />
         <Route path="/export" element={<Export />} /> 
         <Route path='/edit/:id' element={<Update />} />
+        <Route path="/qrcode" element={<QRCode />} /> 
        
       </Routes>
     </Box>
