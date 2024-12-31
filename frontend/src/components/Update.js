@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -7,7 +6,7 @@ function Update(props) {
   const [item, setItem] = useState({
     name: '',
     phonenumber: '',
-    address: '',
+    location: '',
     date: ''
   });
 
@@ -41,12 +40,12 @@ function Update(props) {
     const data = {
       name: item.name,
       phonenumber: item.phonenumber,
-      address: item.address,
+      location: item.location,
       date: item.date,
     };
 
     axios
-      .put(`https://restaurantmgmt.onrender.com/api/restaurant/${id}`, data)
+      .put(`https://restaurantmgmt-qrcz.onrender.com/api/restaurant/${id}`, data)
       .then((res) => {
         navigate(`/show-restaurant/${id}`);
       })
@@ -102,13 +101,13 @@ function Update(props) {
             <br />
 
             <div className='form-group'>
-              <label htmlFor='address'>address</label>
+              <label htmlFor='location'>Address</label>
               <input
                 type='text'
                 placeholder='Address'
-                name='address'
+                name='location'
                 className='form-control'
-                value={item.address}
+                value={item.location}
                 onChange={onChange}
               />
             </div>
@@ -128,10 +127,7 @@ function Update(props) {
             <br />
 
             <button
-              type="submit"
-              variant="contained"
-              color="primary"
-              fullWidth
+              type='submit'
               className='btn btn-outline-info btn-lg btn-block'
             >
               Update 

@@ -36,7 +36,6 @@ const ShowItemDetails = () => {
     axios
       .get(`/api/restaurant/${id}`)
       .then((res) => {
-        console.log(res)
         setItem(res.data);
       })
       .catch((err) => {
@@ -73,7 +72,7 @@ const ShowItemDetails = () => {
               <CardMedia
                 component="img"
                 height="300"
-                image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuRA9x6oQz7KrAjSLtkYd9kJjPok4iDTPvig&s"
+                image="https://images.unsplash.com/photo-1495446815901-a7297e633e8d"
                 alt={item.title}
               />
             </Card>
@@ -90,7 +89,7 @@ const ShowItemDetails = () => {
             {/* Display item details one after another */}
             <Box display="flex" flexDirection="column">
               <Typography variant="body1" paragraph>
-                {item.address}
+                {item.location}
               </Typography>
               <Typography variant="body1">Phone Number: {item.phonenumber}</Typography>
               <Typography variant="body1">Address; {item.location}</Typography>
@@ -142,7 +141,7 @@ const ShowItemDetails = () => {
         <DialogTitle id="alert-dialog-title">{"Confirm Deletion"}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            Are you sure you want to delete this book? This action cannot be undone.
+            Are you sure you want to delete this Info? This action cannot be undone.
           </DialogContentText>
         </DialogContent>
         <DialogActions>
