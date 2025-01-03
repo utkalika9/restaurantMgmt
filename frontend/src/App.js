@@ -35,7 +35,7 @@ const App = () => {
         <Route path='/show-restaurant/:id' element={<ShowItemDetails />} />
         <Route path="/export" element={<Export />} /> 
         <Route path='/edit/:id' element={<Update />} />
-        <Route path="/qrcode" element={<QRCode />} /> 
+        <Route path="/qr-code" element={<QRCode />} /> 
        
       </Routes>
     </Box>

@@ -13,16 +13,22 @@ import {
 import DownloadIcon from '@mui/icons-material/Download';
 import axios from 'axios';
 
-const QRCodePage = () => {
+const QRCode = () => {
   const [restaurants, setRestaurants] = useState([]);
   const [loading, setLoading] = useState(true);
   const baseUrl = 'https://restaurantmgmt-qrcz.onrender.com/show-restaurant/';
 
   useEffect(() => {
     axios
-      .get('/api/restaurants') // Update with your API endpoint
+      .get('https://restaurantmgmt-qrcz.onrender.com/api/restaurant') // Update with your API endpoint
       .then((res) => {
-        setRestaurants(res.data);
+        console.log('API response:', res.data);
+        if (Array.isArray(res.data)) {
+          setRestaurants(res.data);
+        } else {
+          console.error('Unexpected data format:', res.data);
+          setRestaurants([]); // Avoid crashing
+        }
         setLoading(false);
       })
       .catch((err) => {
@@ -30,6 +36,7 @@ const QRCodePage = () => {
         setLoading(false);
       });
   }, []);
+  
 
   const downloadQR = (restaurantId, restaurantName) => {
     const canvas = document.createElement('canvas');
@@ -131,4 +138,5 @@ const QRCodePage = () => {
   );
 };
 
-export default QRCodePage;
+export default QRCode;
+

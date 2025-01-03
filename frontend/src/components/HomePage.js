@@ -23,7 +23,7 @@ const HomePage = () => {
         </Button>
         <Button 
           component={Link} 
-          to="/create-rest" // Updated to link to the ShowitemList component
+          to="/qr-code" // Updated to link to the QRCode component
           color="primary" 
           variant="contained"
         >
