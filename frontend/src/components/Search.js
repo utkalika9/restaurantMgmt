@@ -18,7 +18,7 @@ import {
 import SearchIcon from '@mui/icons-material/Search';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import axios from 'axios';
-import ItemsCard from './ItemsCard';
+import ItemsCard from './RestaurantsCard';
 
 const Search = () => {
     const [restaurants, setRestaurants] = useState([]);

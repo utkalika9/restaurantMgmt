@@ -4,7 +4,7 @@ import React from 'react';
 import { Card, CardContent, Typography, Button, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-const ItemsCard = ({ restaurant }) => {
+const RestaurantsCard = ({ restaurant }) => {
   return (
     <Card
       sx={{
@@ -22,7 +22,7 @@ const ItemsCard = ({ restaurant }) => {
     >
       <img
         src="https://plus.unsplash.com/premium_photo-1661953124283-76d0a8436b87?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cmVzdGF1cmFudHxlbnwwfHwwfHx8MA%3D%3D"
-        alt="Items"
+        alt="Restaurants"
         style={{ height: 200, objectFit: 'cover', width: '100%' }}
       />
       <CardContent sx={{ flexGrow: 1 }}>
@@ -65,4 +65,4 @@ const ItemsCard = ({ restaurant }) => {
   );
 };
 
-export default ItemsCard;
+export default RestaurantsCard;

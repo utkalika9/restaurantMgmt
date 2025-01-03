@@ -26,8 +26,8 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
   boxShadow: theme.shadows[3],
 }));
 
-const ShowItemDetails = () => {
-  const [item, setItem] = useState({});
+const ShowRestaurantDetails = () => {
+  const [restaurant, setRestaurant] = useState({});
   const [openDialog, setOpenDialog] = useState(false);
   const { id } = useParams();
   const navigate = useNavigate();
@@ -36,10 +36,10 @@ const ShowItemDetails = () => {
     axios
       .get(`/api/restaurant/${id}`)
       .then((res) => {
-        setItem(res.data);
+        setRestaurant(res.data);
       })
       .catch((err) => {
-        console.log('Error from ShowItemDetails');
+        console.log('Error from ShowRestaurantDetails');
       });
   }, [id]);
 
@@ -54,7 +54,7 @@ const ShowItemDetails = () => {
         navigate('/show-restaurant');
       })
       .catch((err) => {
-        console.log('Error from ShowItemDetails_deleteClick');
+        console.log('Error from ShowRestaurantDetails_deleteClick');
       });
     setOpenDialog(false);
   };
@@ -67,33 +67,33 @@ const ShowItemDetails = () => {
     <Container maxWidth="md">
       <StyledPaper>
         <Grid container spacing={4}>
-          <Grid item xs={12} md={4}>
+          <Grid restaurant xs={12} md={4}>
             <Card>
               <CardMedia
                 component="img"
                 height="300"
                 image="https://s.hdnux.com/photos/01/41/73/77/25673711/3/rawImage.jpg"
-                alt={item.title}
+                alt={restaurant.title}
               />
             </Card>
           </Grid>
-          <Grid item xs={12} md={8}>
+          <Grid restaurant xs={12} md={8}>
             <Typography variant="h4" component="h1" gutterBottom>
-              {item.name}
+              {restaurant.name}
             </Typography>
             {/* <Typography variant="h6" color="textSecondary" gutterBottom>
               by {item.phonenumber}
             </Typography> */}
             <Divider sx={{ my: 2 }} />
             
-            {/* Display item details one after another */}
+            {/* Display restaurant details one after another */}
             <Box display="flex" flexDirection="column">
               <Typography variant="body1" paragraph>
-                {item.location}
+                {restaurant.location}
               </Typography>
-              <Typography variant="body1">Phone Number: {item.phonenumber}</Typography>
-              <Typography variant="body1">Address; {item.location}</Typography>
-              <Typography variant="body1">Date: {item.date}</Typography>
+              <Typography variant="body1">Phone Number: {restaurant.phonenumber}</Typography>
+              <Typography variant="body1">Address; {restaurant.location}</Typography>
+              <Typography variant="body1">Date: {restaurant.date}</Typography>
             </Box>
 
           </Grid>
@@ -106,18 +106,18 @@ const ShowItemDetails = () => {
             to="/show-restaurant"
             variant="outlined"
           >
-            Back to Item List
+            Back to Restaurant List
           </Button>
           <Box>
             <Button
               startIcon={<EditIcon />}
               component={RouterLink}
-              to={`/edit/${item._id}`}
+              to={`/edit/${restaurant._id}`}
               variant="contained"
               color="primary"
               sx={{ mr: 1 }}
             >
-              Edit item
+              Edit restaurant
             </Button>
             <Button
               startIcon={<DeleteIcon />}
@@ -125,7 +125,7 @@ const ShowItemDetails = () => {
               variant="contained"
               color="error"
             >
-              Delete item
+              Delete restaurant
             </Button>
           </Box>
         </Box>
@@ -157,4 +157,4 @@ const ShowItemDetails = () => {
   );
 };
 
-export default ShowItemDetails;
+export default ShowRestaurantDetails;

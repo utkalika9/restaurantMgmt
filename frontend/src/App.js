@@ -11,8 +11,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomePage from './components/HomePage';
 import CreateRest from './components/CreateRest';
-import ShowItemList from './components/ShowItemList';
-import ShowItemDetails from './components/ShowItemDetails';
+import ShowRestaurantList from './components/ShowRestaurantList';
+import ShowRestaurantDetails from './components/ShowIRestaurantDetails';
 import Export from './components/Export';
 import Update from './components/Update';
 import QRCode from './components/QRCode';
@@ -33,8 +33,8 @@ const App = () => {
     <Routes>
         <Route exact path='/' element={<HomePage />} />
         <Route path='/create-rest' element={<CreateRest />} />
-        <Route path='/show-restaurant' element={<ShowItemList />} />
-        <Route path='/show-restaurant/:id' element={<ShowItemDetails />} />
+        <Route path='/show-restaurant' element={<ShowRestaurantList />} />
+        <Route path='/show-restaurant/:id' element={<ShowRestaurantDetails />} />
         <Route path="/export" element={<Export />} /> 
         <Route path='/edit/:id' element={<Update />} />
         <Route path="/qr-code" element={<QRCode />} /> 

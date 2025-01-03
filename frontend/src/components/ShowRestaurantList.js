@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Button, Typography, Container, Grid, CircularProgress, Box } from '@mui/material';
 
-import ItemsCard from './ItemsCard';
+import RestaurantsCard from './RestaurantsCard';
 
-function ShowItemList() {
-  const [items, setItems] = useState([]); // Ensure default state is an array
+function ShowRestaurantList() {
+  const [restaurants, setRestaurants] = useState([]); // Ensure default state is an array
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -16,7 +16,7 @@ function ShowItemList() {
       .then((res) => {
         if (Array.isArray(res.data)) {
           console.log(res)
-          setItems(res.data); // Ensure data is an array
+          setRestaurants(res.data); // Ensure data is an array
         } else {
           console.error('Unexpected data format:', res.data);
           setError('Unexpected data format received from the server.');
@@ -24,8 +24,8 @@ function ShowItemList() {
         setLoading(false);
       })
       .catch((err) => {
-        console.error('Error fetching items:', err);
-        setError('Failed to fetch items. Please try again later.');
+        console.error('Error fetching restaurants:', err);
+        setError('Failed to fetch restaurants. Please try again later.');
         setLoading(false);
       });
   }, []);
@@ -33,7 +33,7 @@ function ShowItemList() {
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
       <Typography variant="h3" component="h1" color="primary" gutterBottom>
-        Items List
+        Restaurants List
       </Typography>
 
       <Button
@@ -58,17 +58,17 @@ function ShowItemList() {
         </Box>
       ) : (
         <Grid container spacing={3}>
-          {items.length === 0 ? (
-            <Grid item xs={12}>
+          {restaurants.length === 0 ? (
+            <Grid restaurant xs={12}>
               <Typography variant="h6" color="text.secondary">
-                No items found! Add some items to get started.
+                No restaurants found! Add some restaurants to get started.
               </Typography>
             </Grid>
           ) : (
-            items.map((restaurant,index)=>(
+            restaurants.map((restaurant,index)=>(
              <Grid item xs={12} sm={6} md={4} key={index}>
                  {console.log(restaurant)}
-                <ItemsCard restaurant={restaurant} />
+                <RestaurantsCard restaurant={restaurant} />
                </Grid>
             ))
             // items.map((restaurant, index) => (
@@ -84,4 +84,4 @@ function ShowItemList() {
   );
 }
 
-export default ShowItemList;
+export default ShowRestaurantList;
