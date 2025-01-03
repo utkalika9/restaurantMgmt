@@ -21,7 +21,7 @@ const RestaurantsCard = ({ restaurant }) => {
       }}
     >
       <img
-        src="https://plus.unsplash.com/premium_photo-1661953124283-76d0a8436b87?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cmVzdGF1cmFudHxlbnwwfHwwfHx8MA%3D%3D"
+        src="https://t3.ftcdn.net/jpg/03/24/73/92/360_F_324739203_keeq8udvv0P2h1MLYJ0GLSlTBagoXS48.jpg"
         alt="Restaurants"
         style={{ height: 200, objectFit: 'cover', width: '100%' }}
       />
