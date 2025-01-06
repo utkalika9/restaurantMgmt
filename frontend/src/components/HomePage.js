@@ -31,17 +31,17 @@ const HomePage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('https://restaurantmgmt-qrcz.onrender.com/api/restaurants')
+    axios.get('https://restaurantmgmt-qrcz.onrender.com/api/restaurant')
       .then((res) => {
         console.log('API response:', res.data);
-        const restaurants = Array.isArray(res.data) ? res.data : [];
-        const uniqueLocations = new Set(restaurants.map((r) => r.location)).size;
-        const recentRestaurant = restaurants.sort((a, b) =>
+        const restaurant = Array.isArray(res.data) ? res.data : [];
+        const uniqueLocations = new Set(restaurant.map((r) => r.location)).size;
+        const recentRestaurant = restaurant.sort((a, b) =>
           new Date(b.added_date) - new Date(a.added_date)
         )[0];
   
         setStats({
-          totalRestaurants: restaurants.length,
+          totalRestaurants: restaurant.length,
           uniqueLocations,
           recentRestaurant,
         });
