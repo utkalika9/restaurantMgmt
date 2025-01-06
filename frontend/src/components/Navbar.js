@@ -13,11 +13,10 @@ import {
 import GitHubIcon from '@mui/icons-material/GitHub';
 import HomeIcon from '@mui/icons-material/Home';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
-import DownloadIcon from '@mui/icons-material/Download'; // Added missing import
 
 const notesPages = [
-  { title: 'Home', path: '/notes/home' },
-  { title: 'Schedule', path: '/notes/schedule' },
+  { title: 'Resume', path: '/Resume_Utkalika.pdf' }, // This will open the PDF
+  { title: 'Documentation', path: '/notes/documentation' },
 ];
 
 const Navbar = () => {
@@ -51,7 +50,7 @@ const Navbar = () => {
             onClick={handleNotesClick}
             startIcon={<MenuBookIcon />}
           >
-            Popular Items
+            Notes
           </Button>
           <Menu
             anchorEl={notesAnchorEl}
@@ -61,8 +60,9 @@ const Navbar = () => {
             {notesPages.map((page) => (
               <MenuItem
                 key={page.path}
-                component={RouterLink}
-                to={page.path}
+                component="a" // Use a regular anchor tag for opening static files
+                href={page.path}  // Link to the Resume PDF (this should be served from /public)
+                target="_blank"  // Ensure it opens in a new tab
                 onClick={handleNotesClose}
               >
                 {page.title}
