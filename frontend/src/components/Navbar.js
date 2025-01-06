@@ -53,14 +53,6 @@ const Navbar = () => {
           >
             Popular Items
           </Button>
-          <Button
-            color="primary"
-            component={RouterLink}
-            to="/export"
-            startIcon={<DownloadIcon />}
-          >
-            Export
-          </Button>
           <Menu
             anchorEl={notesAnchorEl}
             open={Boolean(notesAnchorEl)}

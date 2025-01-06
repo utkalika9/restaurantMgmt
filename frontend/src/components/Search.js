@@ -35,7 +35,7 @@ const Search = () => {
     });
 
     useEffect(() => {
-        axios.get('https://restaurantmgmt.onrender.com/api/restaurant')
+        axios.get('https://restaurantmgmt-qrcz.onrender.com/api/restaurant')
             .then(res => {
                 setRestaurants(res.data);
                 setFilteredRestaurants(res.data);
