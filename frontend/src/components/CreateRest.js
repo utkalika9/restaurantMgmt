@@ -77,6 +77,7 @@ const CreateRest = (props) => {
   };
 
   return (
+    <container maxwidth="sm" sx={{textAlign:'center',py: 5}}>
     <div className='CreateRest'>
       <ToastContainer
         position="top-right"
@@ -163,6 +164,7 @@ const CreateRest = (props) => {
 
 
     </div>
+    </container>
   );
 };
 
