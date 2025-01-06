@@ -173,7 +173,7 @@ const HomePage = () => {
           <Grid item xs={12} sm={6} md={4}>
             <Button
               component={Link}
-              to="/qrcode"
+              to="/qr-code"
               variant="contained"
               size="large"
               startIcon={<QrCodeIcon />}
