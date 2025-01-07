@@ -15,7 +15,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 
 const notesPages = [
-  { title: 'Resume', path: '/Resume_Utkalika.pdf' }, // This will open the PDF
+  { title: 'Resume', path: 'https://drive.google.com/file/d/1MwroB_YKcD3t3Ftx4-CaSqNlPagvHgT3/view?usp=sharing' }, // This will open the PDF
   { title: 'Documentation', path: '/notes/documentation' },
 ];
 
