@@ -3,7 +3,7 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function Update(props) {
-  const [item, setItem] = useState({
+  const [restaurant, setRestaurant] = useState({
     name: '',
     phonenumber: '',
     location: '',
@@ -17,7 +17,7 @@ function Update(props) {
     axios
       .get(`https://restaurantmgmt-qrcz.onrender.com/api/restaurant/${id}`)
       .then((res) => {
-        setItem({
+        setRestaurant({
             name: res.data.name,
             phonenumber: res.data.phonenumber,
             location: res.data.location,
@@ -31,17 +31,17 @@ function Update(props) {
   }, [id]);
 
   const onChange = (e) => {
-    setItem({ ...item, [e.target.name]: e.target.value });
+    setRestaurant({ ...restaurant, [e.target.name]: e.target.value });
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
 
     const data = {
-      name: item.name,
-      phonenumber: item.phonenumber,
-      location: item.location,
-      date: item.date,
+      name: restaurant.name,
+      phonenumber: restaurant.phonenumber,
+      location: restaurant.location,
+      date: restaurant.date,
     };
 
     axios
@@ -81,7 +81,7 @@ function Update(props) {
                 placeholder='name'
                 name='name'
                 className='form-control'
-                value={item.name}
+                value={restaurant.name}
                 onChange={onChange}
               />
             </div>
@@ -94,7 +94,7 @@ function Update(props) {
                 placeholder='phonenumber'
                 name='phonenumber'
                 className='form-control'
-                value={item.phonenumber}
+                value={restaurant.phonenumber}
                 onChange={onChange}
               />
             </div>
@@ -107,7 +107,7 @@ function Update(props) {
                 placeholder='Address'
                 name='location'
                 className='form-control'
-                value={item.location}
+                value={restaurant.location}
                 onChange={onChange}
               />
             </div>
@@ -120,7 +120,7 @@ function Update(props) {
                 placeholder='Date'
                 name='date'
                 className='form-control'
-                value={item.date}
+                value={restaurant.date}
                 onChange={onChange}
               />
             </div>
