@@ -14,7 +14,7 @@ const Footer = () => (
         }}
     >
         <Typography variant ="h6" gutterBottom>
-            hope you had a good day
+            hope you had a good day ❤️
         </Typography>
         <Typography variant="body2" sx={{ mt: 2 }}>
          © {new Date().getFullYear()} | All Rights Reserved

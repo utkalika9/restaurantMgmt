@@ -71,7 +71,7 @@ const HomePage = () => {
             Welcome to Restaurant Management System
           </Typography>
           <Typography variant="h6" color="text.secondary" gutterBottom>
-            Manage and organize your restaurants seamlessly
+            Manage and organize your restaurants seamlessly 🧋
           </Typography>
         </Box>
 
