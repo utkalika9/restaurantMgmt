@@ -15,12 +15,19 @@ const CreateRest = () => {
     date: ''
   });
 
+
   const onChange = (e) => {
     setDescription({ ...description, [e.target.name]: e.target.value });
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
+
+  const URL = process.env.REACT_APP_API_URL; // Access environment variable
+  
+  if (!URL) {
+    console.error('REACT_APP_API_URL is not defined in the environment variables'); // Log error for undefined URL
+  }
 
     if (!description.name || !description.phonenumber || !description.location || !description.date) {
       toast.error('Please fill all the fields!', {
@@ -37,7 +44,7 @@ const CreateRest = () => {
     }
 
     axios
-      .post('https://restaurantmgmt-qrcz.onrender.com/api/restaurant', description)
+      .post(`${URL}/api/restaurant`, description)
       .then((res) => {
         setDescription({
           name: '',

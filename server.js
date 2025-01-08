@@ -5,6 +5,8 @@ const restaurant = require('./routes/restaurantRoutes');
 const path = require('path');
 require('dotenv').config({ path: './config.env' }); // Ensure .env file is loaded
 
+const URL = process.env.REACT_APP_API_URL; // Access environment variable
+
 // Connect to MongoDB
 connectDB();
 
@@ -15,13 +17,13 @@ app.use(express.json());
 
 // CORS Configuration
 app.use(function (request, response, next) {
-    response.header("Access-Control-Allow-Origin", "https://restaurantmgmt-qrcz.onrender.com");
+    response.header("Access-Control-Allow-Origin", `${URL}`);
     response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   });
 app.use(
   cors({
-    origin: ['https://restaurantmgmt-qrcz.onrender.com','https://5000-utkalika9-restaurantmgm-tz19hdj2teq.ws-us117.gitpod.io'], // Frontend origin
+    origin: [`${URL}`,'https://5000-utkalika9-restaurantmgm-tz19hdj2teq.ws-us117.gitpod.io'], // Frontend origin
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
     credentials: true, // Include credentials if needed
   })

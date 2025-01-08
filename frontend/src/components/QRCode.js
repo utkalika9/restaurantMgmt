@@ -13,14 +13,17 @@ import {
 import DownloadIcon from '@mui/icons-material/Download';
 import axios from 'axios';
 
+const URL = process.env.REACT_APP_API_URL; // Access environment variable
+
 const QRCode = () => {
   const [restaurants, setRestaurants] = useState([]);
   const [loading, setLoading] = useState(true);
-  const baseUrl = 'https://restaurantmgmt-qrcz.onrender.com/show-restaurant/';
+
+const baseUrl = `${URL}/show-restaurant/`;
 
   useEffect(() => {
     axios
-      .get('https://restaurantmgmt-qrcz.onrender.com/api/restaurant') // Update with your API endpoint
+      .get(`${URL}/api/restaurant`) // Update with your API endpoint
       .then((res) => {
         console.log('API response:', res.data);
         if (Array.isArray(res.data)) {

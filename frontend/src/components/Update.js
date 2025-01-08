@@ -10,12 +10,14 @@ function Update(props) {
     date: ''
   });
 
+  const URL = process.env.REACT_APP_API_URL; // Access environment variable
+
   const { id } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
     axios
-      .get(`https://restaurantmgmt-qrcz.onrender.com/api/restaurant/${id}`)
+      .get(`${URL}/api/restaurant/${id}`)
       .then((res) => {
         setRestaurant({
             name: res.data.name,
@@ -45,7 +47,7 @@ function Update(props) {
     };
 
     axios
-      .put(`https://restaurantmgmt-qrcz.onrender.com/api/restaurant/${id}`, data)
+      .put(`${URL}/api/restaurant/${id}`, data)
       .then((res) => {
         navigate(`/show-restaurant/${id}`);
       })

@@ -26,6 +26,8 @@ const Search = () => {
     const [loading, setLoading] = useState(true);
     const [locations, setLocations] = useState([]);
 
+    const URL = process.env.REACT_APP_API_URL; // Access environment variable
+
     const [filters, setFilters] = useState({
         searchTerm: '',
         searchField: 'name',
@@ -35,7 +37,7 @@ const Search = () => {
     });
 
     useEffect(() => {
-        axios.get('https://restaurantmgmt-qrcz.onrender.com/api/restaurant')
+        axios.get(`${URL}/api/restaurant`)
             .then(res => {
                 setRestaurants(res.data);
                 setFilteredRestaurants(res.data);

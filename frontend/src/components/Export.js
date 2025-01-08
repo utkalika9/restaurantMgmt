@@ -15,8 +15,10 @@ const Export = () => {
   const [restaurants, setRestaurants] = useState([]);
   const [loading, setLoading] = useState(true);
 
+const URL = process.env.REACT_APP_API_URL; // Access environment variable
+
   useEffect(() => {
-    axios.get('https://restaurantmgmt-qrcz.onrender.com/api/restaurant')
+    axios.get(`${URL}/api/restaurant`)
       .then((res) => {
         setRestaurants(res.data);
         setLoading(false);

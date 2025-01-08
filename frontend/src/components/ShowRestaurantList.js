@@ -5,6 +5,8 @@ import { Button, Typography, Container, Grid, CircularProgress, Box } from '@mui
 
 import RestaurantsCard from './RestaurantsCard';
 
+const URL = process.env.REACT_APP_API_URL; // Access environment variable
+
 function ShowRestaurantList() {
   const [restaurants, setRestaurants] = useState([]); // Ensure default state is an array
   const [loading, setLoading] = useState(true);
@@ -12,7 +14,7 @@ function ShowRestaurantList() {
 
   useEffect(() => {
     axios
-      .get("https://restaurantmgmt-qrcz.onrender.com/api/restaurant" )
+      .get(`${URL}/api/restaurant`)
       .then((res) => {
         if (Array.isArray(res.data)) {
           console.log(res)
