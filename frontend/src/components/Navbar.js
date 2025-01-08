@@ -33,7 +33,8 @@ const Navbar = () => {
   return (
     <AppBar position="static" color="transparent" elevation={0} sx={{ width: '100%' }}>
       <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'primary.main' }}>
+      <Typography variant="h6" component={RouterLink}
+            to="/" sx={{ flexGrow: 1, color: 'primary.main' }}>
           Restaurant Management Project
         </Typography>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
