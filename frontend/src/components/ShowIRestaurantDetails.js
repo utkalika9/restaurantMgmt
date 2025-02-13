@@ -11,12 +11,16 @@ import {
   CardMedia,
   Divider,
   Box,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(4),
@@ -67,38 +71,39 @@ const ShowRestaurantDetails = () => {
     <Container maxWidth="md">
       <StyledPaper>
         <Grid container spacing={4}>
-          <Grid restaurant xs={12} md={4}>
-            <Card>
+          <Grid item xs={12} md={4}>
+            <Card sx={{ maxWidth: 400, mx: 'auto' }}> {/* Adjust width */}
               <CardMedia
                 component="img"
-                height="300"
+                sx={{
+                  height: 300, // Adjust height
+                  width: '100%', // Ensure full width
+                  objectFit: 'cover', // Maintain aspect ratio
+                  borderRadius: 2, // Optional: rounded corners
+                }}
                 image="https://s.hdnux.com/photos/01/41/73/77/25673711/3/rawImage.jpg"
                 alt={restaurant.title}
               />
             </Card>
           </Grid>
-          <Grid restaurant xs={12} md={8}>
+          <Grid item xs={12} md={8}>
             <Typography variant="h4" component="h1" gutterBottom>
               {restaurant.name}
             </Typography>
-            {/* <Typography variant="h6" color="textSecondary" gutterBottom>
-              by {item.phonenumber}
-            </Typography> */}
             <Divider sx={{ my: 2 }} />
-            
-            {/* Display restaurant details one after another */}
+
+            {/* Display restaurant details */}
             <Box display="flex" flexDirection="column">
               <Typography variant="body1" paragraph>
                 {restaurant.location}
               </Typography>
               <Typography variant="body1">Phone Number: {restaurant.phonenumber}</Typography>
-              <Typography variant="body1">Address; {restaurant.location}</Typography>
+              <Typography variant="body1">Address: {restaurant.location}</Typography>
               <Typography variant="body1">Date: {restaurant.date}</Typography>
             </Box>
-
           </Grid>
         </Grid>
-        
+
         <Box mt={4} display="flex" justifyContent="space-between">
           <Button
             startIcon={<ArrowBackIcon />}
@@ -131,7 +136,7 @@ const ShowRestaurantDetails = () => {
         </Box>
       </StyledPaper>
 
-      {/* Keep the dialog unchanged */}
+      {/* Delete Confirmation Dialog */}
       <Dialog
         open={openDialog}
         onClose={handleDeleteCancel}

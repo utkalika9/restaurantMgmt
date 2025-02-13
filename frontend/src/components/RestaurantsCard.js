@@ -1,12 +1,12 @@
-
-
 import React from 'react';
-import { Card, CardContent, Typography, Button, Box } from '@mui/material';
+import { Card, CardContent, Typography, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 const RestaurantsCard = ({ restaurant }) => {
   return (
     <Card
+      component={Link} // Make the entire card a clickable link
+      to={`/show-restaurant/${restaurant._id}`}
       sx={{
         height: '100%',
         display: 'flex',
@@ -14,6 +14,8 @@ const RestaurantsCard = ({ restaurant }) => {
         transition: 'transform 0.2s, box-shadow 0.2s',
         borderRadius: 2,
         boxShadow: 3,
+        textDecoration: 'none', // Remove underline from the link
+        color: 'inherit', // Inherit text color
         '&:hover': {
           transform: 'scale(1.05)',
           boxShadow: 6,
@@ -27,9 +29,7 @@ const RestaurantsCard = ({ restaurant }) => {
       />
       <CardContent sx={{ flexGrow: 1 }}>
         <Typography variant="h6" component="div" color="primary" gutterBottom>
-          <Link to={`/show-restaurant/${restaurant._id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-            {restaurant.name || 'Unknown Name'}
-          </Link>
+          {restaurant.name || 'Unknown Name'}
         </Typography>
         <Typography variant="subtitle1" color="text.secondary">
           {restaurant.phonenumber || 'Phone number unavailable'}
@@ -49,18 +49,6 @@ const RestaurantsCard = ({ restaurant }) => {
           {restaurant.location || 'Location not provided'}
         </Typography>
       </CardContent>
-      <Box sx={{ p: 2, mt: 'auto' }}>
-        <Button
-          component={Link}
-          to={`/show-restaurant/${restaurant._id}`}
-          variant="contained"
-          color="primary"
-          size="small"
-          fullWidth
-        >
-          View Details
-        </Button>
-      </Box>
     </Card>
   );
 };
