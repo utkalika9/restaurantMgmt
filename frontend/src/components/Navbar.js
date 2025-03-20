@@ -16,7 +16,7 @@ import MenuBookIcon from '@mui/icons-material/MenuBook';
 
 const notesPages = [
   { title: 'Resume', path: 'https://drive.google.com/file/d/1MwroB_YKcD3t3Ftx4-CaSqNlPagvHgT3/view?usp=sharing' }, // This will open the PDF
-  { title: 'Documentation', path: '/notes/documentation' },
+  { title: 'Documentation', path: 'https://docs.google.com/document/d/17X7w1OyJAuQir64pAb_lXlpp-IyH6aAg9zIYWodFZ-c/edit?usp=sharing' },
 ];
 
 const Navbar = () => {
