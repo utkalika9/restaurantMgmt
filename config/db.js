@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
-require('dotenv').config(); // Ensure dotenv is loaded to access environment variables
+const dns = require('dns');
+dns.setServers(['8.8.8.8', '8.8.4.4']);
+
 const connectDB = async () => {
     const uri = process.env.DATABASE;
     if (!uri) {
         console.error('DATABASE URI is not defined in the environment variables');
-        process.exit(1); // Exit the process if the URI is undefined
+        process.exit(1);
       }
     try {
         await mongoose.connect(uri);
